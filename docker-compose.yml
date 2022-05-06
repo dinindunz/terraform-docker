@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  terraform-utils:
+    image: hashicorp/terraform:latest
+    environment:
+      - AWS_SDK_LOAD_CONFIG=1
+    entrypoint: ""
+    volumes:
+      - .:/work
+      - ~/.aws:/root/.aws
+    working_dir: /work
